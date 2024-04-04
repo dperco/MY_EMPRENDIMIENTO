@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PROFE_LATAM_DIGITAL - Oferta de Cursos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #141313;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        #cursos, #contacto {
+            margin: 2em 5%;
+            background-color: rgb(224, 79, 79);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-block-end: 0.5em;
+        }
+        form input, form textarea, form button {
+            margin-block-end: 1em;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        form button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #4cae4c;
+        }
+        #curso {
+            margin: 2em 5%;
+        }
+        
+        .contenedor-cursos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em; /* Espacio entre las cajas de los cursos */
+            justify-content: flex-start; /* Distribuye las cajas de los cursos en el contenedor */
+        }
+        
+        .curso {
+            flex: 0 1 calc(33.333% - 2em); /* Tres cajas por fila con espacio entre ellas */
+            background-color: #50dbd0;
+            
+            gap: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid red; /* Borde temporal para visualización */
+        }
+        
+        .curso-logo {
+            max-inline-size: 200px;
+            margin-block-end: 1em;
+        }
+        
+        @media (max-inline-size: 768px) {
+            .curso {
+                flex: 0 1 calc(50% - 2em); /* Dos cajas por fila en pantallas más pequeñas */
+            }
+        }
+        
+        @media (max-inline-size: 480px) {
+            .curso {
+                flex: 0 1 100%; /* Una caja por fila en pantallas muy pequeñas */
+            }
+        }
+        .cabezal{
+            
+            inline-size: 400px;
+            block-size: 300px;
+            margin-inline-end: 100px;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+        }
+        
+        .header div {
+            display: flex;
+            flex-direction: column; /* Organiza el contenido en columna */
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div>
+            <img src="/servidor/images/EDU.jpeg" alt="Logo" class="cabezal" style="margin-inline-start: 200px;">
+            </div>
+            <div>
+                <h1 style="color: chartreuse; font-size:40px">Bienvenidos a LATAM_EDU_TECH</h1><br>
+                <p style="font-size:20px">La mejor opción para aprender TODO SOBRE EL MUNDO DIGITAL</p>
+                <p style="color:aqua;font-size:20px">Distintos tipos de Cursos ,para particulares y empresas, online, offline</p>
+                <p style="font-size:20px">Los precios mas bajos del Mercado </p>
+                <p style="color:crimson;font-size:20px">*** Realizamos Cursos a Pedido ,que queres aprender ? Consultanos *** </p>
+                
+            </div>
+            <div>
+                <img src="/servidor/images/Mapa-Politico-de-America.jpg" alt="Logo " class="cabezal" style="margin-inline-start: 100px;">
+            </div>
+            <div>
+                <p><img src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19758.png" alt="face" style="inline-size: 60px;"><a href="https://www.facebook.com">Facebook</a></p>
+                <p><img src="https://pngimg.com/uploads/twitter/twitter_PNG29.png" alt="twit" style="inline-size: 60px;"><a href="https://www.twitter.com">X</a></p>
+                <p><img src="https://pngimg.com/uploads/instagram/instagram_PNG11.png" alt="insta" style="inline-size: 60px;"><a href="https://www.instagram.com">Instagram</a></p>
+            </div>
+        </div>
+    </header>
+    
+    <section id="cursos">
+        <h2>Oferta de Cursos</h2>
+        <p style="color:rgb(72, 11, 216);font-size:20px">Conoce nuestra oferta de cursos y elige el que más se ajuste a tus necesidades.</p>
+        <p style="color:rgb(19, 18, 18);font-size:15px">Los cursos online , comienzan cuando se obtiene un cupo minimo de 20 inscriptos.</p>
+        <div class="contenedor-cursos">
+            <div class="curso">
+                <img src="html.jpeg" alt="Logo del Curso 1" class="curso-logo">
+                <h3>Curso de Programación Básica</h3>
+                <p>Un curso introductorio para todas las edades que deseen aprender los fundamentos de la programación.</p>
+                
+            </div>
+            <div class="curso">
+                <img src="js.jpeg" alt="Logo del Curso 2" class="curso-logo" >
+                <h3>Curso de Diseño Web/Fullstack</h3>
+                <p>Aprende a diseñar sitios web atractivos y funcionales, adecuado para principiantes y entusiastas del diseño.</p>
+            </div>
+            <div class="curso">
+                <img src="Java.png" alt="Logo del Curso 2" class="curso-logo">
+                <h3>Curso de Diseño Web</h3>
+                <p>Aprende el mas utilizado en Latam , adecuado para principiantes y entusiastas del diseño.</p>
+            </div>
+            <div class="curso">
+                <img src="python.jpeg" alt="Logo del Curso 2" class="curso-logo">
+                <h3>Curso de Diseño Web</h3>
+                <p>Aprende el N°1  , para principiantes y mas.</p>
+            </div>
+            <div class="curso">
+                <img src="react.jpeg" alt="Logo del Curso 2" class="curso-logo">
+                <h3>Curso de Diseño Web</h3>
+                <p>Para una buena presentacion ,el rey del FrontEnd.</p>
+            </div>
+            <div class="curso">
+                <img src="node-js-logo-3.png" alt="Logo del Curso 2" class="curso-logo">
+                <h3>Curso de Diseño Web / Backend</h3>
+                <p>Para resguardar las aplicaciones ,este es de lo mejor.</p>
+            </div>
+            <div class="curso">
+                <img src="SQL.jpeg" alt="Logo del Curso 3" class="curso-logo">
+                <h3>Curso de Bases de Datos</h3>
+                <p>Curso enfocado en la gestión y manipulación de datos, ideal para aquellos interesados en el análisis de datos.</p>
+            </div>
+            <div class="curso">
+                <img src="IOT.jpeg" alt="Logo del Curso 3" class="curso-logo">
+                <h3>Curso de aplicaciones IOT</h3>
+                <p> Ideal para aquellos interesados en la internet de las cosas .</p>
+            </div>
+            <div class="curso">
+                <img src="excel.jpeg" alt="Logo del Curso 3" class="curso-logo">
+                <h3>Curso de Excel Basico y Avanzado</h3>
+                <p>Una de los historicos ,mas utilizados en aplicaciones simples del hogar o
+                    la oficina.</p>
+            </div>
+            <div class="curso">
+                <img src="typescript-logo.png" alt="Logo del Curso 3" class="curso-logo">
+                <h3>Curso de Typescript , de los mas modernos </h3>
+                <p> una de las nuevas tecnologias del software .</p>
+            </div>
+            <!-- Repite la estructura para más cursos -->
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form method="post" id="contact-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            
+            <button type="submit" >Enviar</button>
+        </form>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', function(event) {
+              event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+              const formData = new FormData(form);
+              fetch('http://localhost:3000/enviar-formulario', {
+                method: 'POST',
+                body: formData
+              })
+              .then(response => response.json())
+              .then(data => {
+                // Aquí puedes mostrar un mensaje o alerta de éxito
+                alert('en breve nos comunicaremos con usted');
+              })
+              .catch(error => {
+                // Aquí puedes mostrar un mensaje o alerta de error
+                alert('Hubo un error al guardar el contacto');
+              });
+            });
+          });
+    </script>
+    <footer>
+        
+       
+        <a href="http://localhost:3000/obtener-contactos">mensajes</a>
+    </footer>
+</body>
+</html>

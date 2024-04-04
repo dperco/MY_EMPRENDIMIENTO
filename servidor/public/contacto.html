@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contactos</title>
+</head>
+<body>
+    <h1>Contactos Recibidos</h1>
+    <div id="contactos">
+        <!-- Los contactos se cargarán aquí -->
+    </div>
+
+    <script>
+        // Este script hace una solicitud al servidor para obtener los datos de los contactos
+        window.onload = function() {
+            fetch('/ruta-para-obtener-contactos')
+                .then(response => response.json())
+                .then(data => {
+                    const contactosDiv = document.getElementById('contactos');
+                    data.forEach(contacto => {
+                        const contactoDiv = document.createElement('div');
+                        contactoDiv.innerHTML = `
+                            <p>Nombre: ${contacto.nombre}</p>
+                            <p>Email: ${contacto.email}</p>
+                            <p>Mensaje: ${contacto.mensaje}</p>
+                        `;
+                        contactosDiv.appendChild(contactoDiv);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        };
+    </script>
+</body>
+</html>
