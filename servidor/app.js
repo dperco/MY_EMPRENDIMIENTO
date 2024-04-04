@@ -8,7 +8,7 @@ import bodyParser  from 'body-parser';
 import multer from 'multer';
 const upload = multer();
 
-const app = express();
+const app = express(); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
