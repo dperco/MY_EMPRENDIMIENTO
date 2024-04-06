@@ -1,22 +1,32 @@
 
 import express from 'express';
 import { MongoClient } from 'mongodb';
-
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import cors from 'cors';
 import bodyParser  from 'body-parser';
 
 import multer from 'multer';
+import Stripe from 'stripe';
+const stripe = new Stripe('sk_test_51P2FsJRxra0FbJoDgBJgjgKOivmta0QeEilvuHN1Bf7bCoAvt2H6eM8hj7k6y969CGU2lJWD5YdwTSC88ybqPwNZ00vgsOnh42');
+
 const upload = multer();
 
 const app = express(); 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 
 app.use(cors());
 
 
-const port = 3000;
+const port = 5000;
 const url = 'mongodb+srv://dperco4:Qadf0502@dperco.2zavjrc.mongodb.net/?retryWrites=true&w=majority&appName=dperco'; // Asegúrate de que esta URL sea correcta para tu instancia de MongoDB
 const dbName = 'education'; // Reemplaza con el nombre de tu base de datos
 
@@ -57,6 +67,26 @@ async function conectarDB() {
       res.status(500).send('Error al obtener los contactos');
     }
   });
+
+  app.get('/curso-html', async (req, res) => {
+
+    //res.sendFile(path.join(__dirname, '/public', 'cursos.html'));    
+    res.sendFile(join(__dirname, 'public', 'cursos.html'));    
+  })
+
+  
+// Ruta para manejar la compra de un curso
+const product=[{
+  name:'Curso de HTML',
+  price:1000,
+  id:1
+}
+]
+app.post('/comprar-curso/:id', async (req, res) => {
+  
+  
+    
+});
 
   // Inicia el servidor
   app.listen(port, () => {

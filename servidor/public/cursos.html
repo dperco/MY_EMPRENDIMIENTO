@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso HTML</title>
+    <!-- Añade aquí tus estilos y archivos de CSS -->
+</head>
+<body>
+    <header>
+        <!-- Aquí puedes poner un encabezado o logo si lo deseas -->
+    </header>
+    <nav>
+        <!-- Este es el menú del curso -->
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#modulos">Módulos</a></li>
+            <li><a href="#horarios">Horarios</a></li>
+            <li><a href="#profesores">Profesores</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Página de detalles del curso -->
+<section id="detalles-curso">
+    <h2>Curso de Programación Avanzada</h2>
+    <p>Descripción del curso...</p>
+    <p>Precio: $50.00</p>
+    <!-- Botón que abre el modal de confirmación de compra -->
+    <button id="btn-comprar">Comprar Curso</button>
+</section>
+
+<!-- Modal de confirmación de compra -->
+<div id="modal-compra" style="display:none;">
+    <h3>Confirmar Compra</h3>
+    <p>Curso seleccionado: Programación Avanzada</p>
+    <p>Total a pagar: $50.00</p>
+    <!-- Botón que inicia el proceso de pago -->
+    <button id="btn-confirmar-compra">Confirmar y Pagar</button>
+</div>
+
+
+    </main>
+    <footer>
+        <button type="button" onclick="location.href='/comprar-curso'">Comprar</button>
+    </footer>
+    <script>
+        document.getElementById('btn-comprar').addEventListener('click', function() {
+            // Muestra el modal de confirmación de compra
+            document.getElementById('modal-compra').style.display = 'block';
+        });
+    
+        document.getElementById('btn-confirmar-compra').addEventListener('click', function() {
+            // Aquí puedes realizar la solicitud POST para iniciar el proceso de pago
+            fetch('/compra-curso', {
+                method: 'POST',
+                // Agrega los detalles necesarios en el cuerpo de la solicitud
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Redirige al usuario a la pasarela de pago o maneja la respuesta
+                window.location.href = data.url;
+            })
+            .catch(error => {
+                console.error('Error al iniciar el proceso de pago:', error);
+            });
+        });
+    </script>
+    <!-- Añade aquí tus scripts de JavaScript -->
+</body>
+</html>

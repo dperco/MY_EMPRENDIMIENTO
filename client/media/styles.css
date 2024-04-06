@@ -1,0 +1,101 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #1288cc;
+  color: white;
+  background-color:black;
+}
+
+/* Estilos para la imagen EDU.jpeg */
+.cabezal.edu-logo {
+  inline-size: 300px; /* Ajusta el ancho de la imagen */
+  block-size: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos para la imagen latam.gif */
+.cabezal.latam-logo {
+  inline-size: 300px; /* Ajusta el ancho de la imagen */
+  block-size: 100; /* Mantiene la proporción de la imagen */
+  border: 3px solid #000; /* Borde sólido */
+}
+
+/* Estilos para la imagen de Facebook */
+img[alt="face"] {
+  inline-size: 30px; /* Ajusta el ancho de la imagen */
+  vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+/* Estilos para la imagen de Twitter */
+img[alt="twit"] {
+  inline-size: 30px; /* Ajusta el ancho de la imagen */
+  vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+/* Estilos para la imagen de Instagram */
+img[alt="insta"] {
+  inline-size: 30px; /* Ajusta el ancho de la imagen */
+  vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+/* Estilos para las imágenes de las redes sociales */
+.social-icon {
+  inline-size: 30px; /* Ajusta el ancho de la imagen */
+  vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+body{
+  background-color: #000;
+}
+
+.cursos-container{
+  margin: 5vh auto;
+  display: flex;
+  background-color: aquamarine;
+}
+
+.curso{
+  text-align: center;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid #1288cc;
+  padding:auto;
+  padding-block-start: 2px;
+  margin-block-start: 2px;
+  margin-block-end: 2px;
+  background-color: rgb(86, 94, 91);
+
+}
+
+.curso p{
+  font-size: 10px;
+  align-items: center;
+
+}
+
+.curso img{
+  margin-block-start: 40px;
+  inline-size: 150px;
+  block-size: 150px;
+  
+}
+
+.curso button{
+  border: none;
+  outline: 0;
+  padding: 10px;
+  color: white;
+  background-color: #1288cc;
+  text-align: center;
+  cursor: pointer;
+  inline-size: 100%;
+  font-size: 15px;
+}
+
+.curso button:hover{
+  opacity: 0.7;
+}
