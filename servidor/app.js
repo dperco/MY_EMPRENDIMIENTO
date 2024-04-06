@@ -9,7 +9,7 @@ import bodyParser  from 'body-parser';
 
 import multer from 'multer';
 import Stripe from 'stripe';
-const stripe = new Stripe('sk_test_51P2FsJRxra0FbJoDgBJgjgKOivmta0QeEilvuHN1Bf7bCoAvt2H6eM8hj7k6y969CGU2lJWD5YdwTSC88ybqPwNZ00vgsOnh42');
+const stripe = new Stripe(secret_key);
 
 const upload = multer();
 
@@ -27,7 +27,7 @@ app.use(cors());
 
 
 const port = 5000;
-const url = 'mongodb+srv://dperco4:Qadf0502@dperco.2zavjrc.mongodb.net/?retryWrites=true&w=majority&appName=dperco'; // Asegúrate de que esta URL sea correcta para tu instancia de MongoDB
+const url = mongoUrl; // Asegúrate de que esta URL sea correcta para tu instancia de MongoDB
 const dbName = 'education'; // Reemplaza con el nombre de tu base de datos
 
 // Middleware para parsear el cuerpo de las peticiones POST
